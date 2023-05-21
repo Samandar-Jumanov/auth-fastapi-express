@@ -13,3 +13,7 @@ sqlalchemy
 pydantic
 passlib
 pyjwt 
+
+
+#Code corrected to save db 
+instead of sequelize.sync({force : true })  Dont use {force : true}
