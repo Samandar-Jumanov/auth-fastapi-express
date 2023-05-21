@@ -47,10 +47,8 @@ exports.createNewUser = async (request, response, next) => {
     if (!user || !validPassword) {
             next( new HttpError(404, 'Cannot find user'))
     }
-  
-   
     try {
-      const token = jwt.sign({user : user.id}, secret)
+      const token = jwt.sign({user : user.id}, secret )
       response.json({user , token});
     } catch (err) {
       response.status(500).json({ "message":"Error while logging in"})

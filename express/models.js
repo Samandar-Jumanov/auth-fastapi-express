@@ -21,13 +21,13 @@ const User = sequelize.define('User', {
       type: DataTypes.STRING,
       allowNull: false ,
       validate: {
-        len: [6, 100] // Require password to be at least 6 characters long
+        len: [6, 100] 
       }
     }
   });
   
   (async () => {
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
     console.log('Tables created!');
   })();
 
