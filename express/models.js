@@ -47,7 +47,7 @@ const Posts =  sequelize.define('Posts', {
 })
 
 async function sequelizePosts(){
-  await sequelize.sync({force : true})
+  await sequelize.sync()
   console.log('Posts table created ')
 }
 

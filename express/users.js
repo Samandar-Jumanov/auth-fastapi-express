@@ -12,4 +12,9 @@ router.route('/signup')
 
 router.route('/login')
 .post(usersController.signin)
+
+router.route('/signout')
+.post(usersController.signOut)
+
+
 module.exports = router 

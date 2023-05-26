@@ -70,4 +70,18 @@ exports.createNewUser = async (request, response, next) => {
     }
   }
 
+exports.signOut = async (request , response , next ) =>{
+  const token = request.cookies.jwt;
+  if (token) {
+    jwt.verify(token, secret, (err, decodedToken) => {
+      if (err) {
+        console.error(err);
+      } else {
+        response.clearCookie('jwt');
+      }
+    });
+  }
+  response.status(200).json({ message: 'User signed out successfully' })
+}
+
  
